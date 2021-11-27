@@ -34,10 +34,10 @@ def load_preddict():
 
 @app.route('/', methods=['GET'])
 def index():
-    return 'Machine Learning Inference'
+    return 'Diabetes Prediction'
 
 
 if __name__ == '__main__':
 
     port = os.environ.get("PORT", 5000)
-    app.run(debug=True, host="0.0.0.0", port=port) #, host='0.0.0.0', port=os.getenv('PORT'))
+    app.run(debug=False, host="0.0.0.0", port=port) #, host='0.0.0.0', port=os.getenv('PORT'))
