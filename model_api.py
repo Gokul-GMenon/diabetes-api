@@ -1,7 +1,7 @@
 import keras
 import numpy as np
 import os
-from flask import Flask, jsonify, request, proce
+from flask import Flask, jsonify, request, send_from_directory
 
 def predict(model, data):
 
@@ -15,6 +15,11 @@ def predict(model, data):
 model = keras.models.load_model('diabetes.h5')
 
 app = Flask(__name__)
+
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                          'favicon.ico',mimetype='image/vnd.microsoft.icon')
 
 @app.route('/predict/', methods=['POST'])
 def load_preddict():
