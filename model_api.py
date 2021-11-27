@@ -1,4 +1,4 @@
-import keras
+import tensorflow.keras as keras
 import numpy as np
 import os
 from flask import Flask, jsonify, request, send_from_directory
@@ -21,7 +21,7 @@ app = Flask(__name__)
 #     return send_from_directory(os.path.join(app.root_path, 'static'),
 #                           'favicon.ico',mimetype='image/vnd.microsoft.icon')
 
-@app.route('/predict/', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def load_preddict():
 
     data = request.get_json(force=True)
@@ -38,4 +38,4 @@ def index():
 if __name__ == '__main__':
 
     port = os.environ.get("PORT", 5000)
-    app.run(debug=False, host="0.0.0.0", port=port) #, host='0.0.0.0', port=os.getenv('PORT'))
+    app.run(debug=True, host="0.0.0.0", port=port) #, host='0.0.0.0', port=os.getenv('PORT'))
