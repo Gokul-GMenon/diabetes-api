@@ -1,5 +1,6 @@
 # import tensorflow.keras as keras
 import keras
+# import pickle
 import numpy as np
 import os
 from flask import Flask, jsonify, request, send_from_directory
@@ -14,7 +15,7 @@ def predict(model, data):
 
 
 model = keras.models.load_model('diabetes.h5')
-
+# model = pickle.load(open('diabetes.pkl', 'rb'))
 app = Flask(__name__)
 
 # @app.route('/favicon.ico')
