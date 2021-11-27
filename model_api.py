@@ -1,6 +1,7 @@
 import keras
 import numpy as np
-from flask import Flask, jsonify, request
+import os
+from flask import Flask, jsonify, request, proce
 
 def predict(model, data):
 
@@ -30,4 +31,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=80)
+    app.run(debug=True, host='0.0.0.0', port=os.getenv('PORT'))
