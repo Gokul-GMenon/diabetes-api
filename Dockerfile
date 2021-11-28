@@ -1,10 +1,16 @@
-FROM python:3.8.1
+# FROM python:3.8.1
 
-ENV APP_HOME /app
-WORKDIR $APP_HOME
+# ENV APP_HOME /app
+# WORKDIR $APP_HOME
 
-COPY . /app
+# COPY . /app
 
+# RUN pip install -r requirements.txt
+
+# ENTRYPOINT ["python model_api.py"]
+FROM python:3.8.1-buster
+WORKDIR /app
+COPY requirements.txt .
 RUN pip install -r requirements.txt
-
-ENTRYPOINT ["python model_api.py"]
+COPY . .
+CMD ["python", "app.py"]
