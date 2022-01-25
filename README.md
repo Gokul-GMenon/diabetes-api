@@ -18,6 +18,7 @@ The POST request format is shown below:
 
 - Send the request to: https://diabetes-api-app.herokuapp.com/predict/
 - The response should be:
+
 {
-  "result: 1               // (or 0)
+  "result": 1               // (or 0)
 }
