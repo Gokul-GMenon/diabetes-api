@@ -1,5 +1,6 @@
 # Diabetes-api
 - This was a flask based API done for HACKFORTOMORROW hackathon.
+- The model is aimed at detecting diabetes in patients using various health metrics.
 - The model was done using scikit-learn library (polynomial regression model).
 - The api was done in flask and hosted on heroku.
 
